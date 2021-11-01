@@ -1,50 +1,50 @@
 import Head from 'next/head';
-import Link from 'next/link'
-import './styles.css';
+import Link from 'next/link';
+import { Card, CardP, Container, Footer, FooterA, Grid, Main, Title } from './styles';
 
 function Home() {
   return (
-    <div className="container">
+    <Container>
       <Head>
         <title>devsBlog</title>
       </Head>
 
-      <main className="main">
-        <h1 className="title">
+      <Main>
+        <Title>
           devsBlog
-        </h1>
+        </Title>
 
-        <div className="grid">
-          <a className="card">
-            <h2>ReactJS</h2>
-            <p>Saiba tudo sobre a lib javascript mais usada no mundo</p>
-          </a>
+        <FooterA>
+          <Grid>
+            <Card>ReactJS</Card>
+            <CardP>Saiba tudo sobre a lib javascript mais usada no mundo</CardP>
+          </Grid>
 
-          <a className="card">
-            <h2>NodeJS</h2>
-            <p>Por quê o javascript está em todos os lugares? Descubra aqui.</p>
-          </a>
+          <Grid>
+            <Card>NodeJS</Card>
+            <CardP>Por quê o javascript está em todos os lugares? Descubra aqui.</CardP>
+          </Grid>
 
-          <a className="card">
-            <h2>Context API ou Redux?</h2>
-            <p>Minha opinião final, sem ficar em cima do muro</p>
-          </a>
+          <Grid>
+            <Card>Context API ou Redux?</Card>
+            <CardP>Minha opinião final, sem ficar em cima do muro</CardP>
+          </Grid>
 
-          <a className="card">
-            <h2>Seu artigo no nosso blog &rarr;</h2>
+          <Grid>
+            <Card>Seu artigo no nosso blog &rarr;</Card>
             <Link href="/form" >
-            <p>
+            <CardP>
               Clique para enviar seu conteúdo e que sabe aparecer em nosso blog?
-            </p>
+            </CardP>
             </Link>
-          </a>
-        </div>
-      </main>
+          </Grid>
+        </FooterA>
+      </Main>
 
-      <footer className="footer">
+      <Footer>
         Powered by Ícaro Campos
-      </footer>
-    </div>
+      </Footer>
+    </Container>
   );
 }
 

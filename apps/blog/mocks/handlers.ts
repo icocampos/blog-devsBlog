@@ -1,5 +1,5 @@
 import { graphql } from 'msw'
-import {posts} from './data/posts'
+import { posts } from './data/posts'
 
 export const handlers = [
   // Handles a "Login" mutation
