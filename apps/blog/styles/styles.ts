@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.body`
+export const Container = styled.div`
   padding: 0 2rem;
 `;
 
@@ -31,7 +31,6 @@ export const FooterA = styled.a`
 `;
 
 export const Title = styled.h1`
-  margin: 0;
   line-height: 1.15;
   font-size: 4rem;
 `;
@@ -60,12 +59,17 @@ export const CardP = styled.p`
   line-height: 1.5;
   cursor: pointer;
 `;
-/**
- styled.div`
+
+styled.div`
   @media (max-width: 600px) {
+      Grid{
+      height: 100%;
       width: 100%;
       flex-direction: column;
+      }
     }
 `;
- */
 
+export const Forms = styled.form`
+  color: blue;
+`;

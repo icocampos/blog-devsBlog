@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import { Card, CardP, Container, Footer, FooterA, Grid, Main, Title } from './styles';
+import { Card, CardP, Container, Footer, FooterA, Grid, Main, Title } from '../styles/styles';
+
 
 function Home() {
   return (
@@ -14,6 +15,7 @@ function Home() {
           devsBlog
         </Title>
 
+        { }
         <FooterA>
           <Grid>
             <Card>ReactJS</Card>

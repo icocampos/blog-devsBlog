@@ -1,9 +1,11 @@
+import { Main } from '../styles/styles'
+
 const Form = () => {
 
     return (
         <div>
-            <main>
-                <form >
+            <Main>
+                <form>
                 Envie seu artigo pra gente
                 <br/>
                 <input type="text"/>
@@ -11,7 +13,7 @@ const Form = () => {
                     Enviar
                 </button>
                 </form>
-            </main>
+            </Main>
         </div>
     )
 }
