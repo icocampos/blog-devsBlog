@@ -1,4 +1,4 @@
-async function fetchGraphQL(text, variables) {
+async function fetchGraphQL(text) {
   const NEXT_PUBLIC_API_MOCKING = process.env.NEXT_PUBLIC_API_MOCKING;
 
   // Fetch data from GitHub's GraphQL API:
@@ -10,7 +10,6 @@ async function fetchGraphQL(text, variables) {
     },
     body: JSON.stringify({
       query: text,
-      variables,
     }),
   });
 

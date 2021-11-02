@@ -1,9 +1,42 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import  React from 'react';
 import { Card, CardP, Container, Footer, FooterA, Grid, Main, Title } from '../styles/styles';
+import fetchGraphQL from './graphql';
 
+
+
+const { useState, useEffect } = React;
 
 function Home() {
+
+  const [posts, setPosts] = useState(null);
+
+  useEffect(() => {let isMounted = true;
+    fetchGraphQL(`
+      query {
+        posts {
+          id
+          title
+          content
+          createdAt
+        }
+      }
+    `).then(response => {
+      if(!isMounted) {
+        return;
+      }
+      const data = response.data;
+      setPosts(data.posts);
+    }).catch(error => {
+      console.log(error);
+    });
+
+    return () => {
+      isMounted = false;
+    };
+  }, [fetchGraphQL]);
+
   return (
     <Container>
       <Head>
@@ -14,12 +47,12 @@ function Home() {
         <Title>
           devsBlog
         </Title>
-
-        { }
         <FooterA>
           <Grid>
             <Card>ReactJS</Card>
-            <CardP>Saiba tudo sobre a lib javascript mais usada no mundo</CardP>
+            <CardP>
+              {posts != null ? `Repository: ${posts.content}` : 'loading...'}
+            </CardP>
           </Grid>
 
           <Grid>
